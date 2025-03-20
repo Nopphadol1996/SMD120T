@@ -120,13 +120,7 @@ def send_to_influx(data):
         print("InfluxDB Response:", response.status_code, response.text)
         response.close()
     except Exception as e:
-        print("Failed to send data to InfluxDB:", e)        
-        # แทนที่ time.sleep(1) ด้วยการกระพริบ LED อย่างรวดเร็ว
-        for _ in range(3):  
-            led_yellow.value(1)
-            time.sleep(0.2)
-            led_yellow.value(0)
-            time.sleep(0.2)
+        print("Failed to send data to InfluxDB:", e)
 
 
 
